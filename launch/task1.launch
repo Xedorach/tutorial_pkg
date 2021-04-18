@@ -32,17 +32,17 @@
 
   <node pkg="move_base" type="move_base" name="move_base" output="screen">
     <param name="controller_frequency" value="10.0"/>
-    <rosparam file="$(find tutorial_pkg)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find tutorial_pkg)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find tutorial_pkg)/config/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find tutorial_pkg)/config/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find tutorial_pkg)/config/trajectory_planner.yaml" command="load" />
+    <rosparam file="$(find rosbot_mapping)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find rosbot_mapping)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find rosbot_mapping)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find rosbot_mapping)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find rosbot_mapping)/config/trajectory_planner.yaml" command="load" />
   </node>
 
   <node pkg="explore_lite" type="explore" respawn="true" name="explore" output="screen">
-    <rosparam file="$(find tutorial_pkg)/config/exploration.yaml" command="load" />
+    <rosparam file="$(find rosbot_mapping)/config/exploration.yaml" command="load" />
   </node>
 
-  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find tutorial_pkg)/rviz/tutorial_8.rviz"/>
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find rosbot_mapping)/rviz/task1.rviz"/>
 
 </launch>
